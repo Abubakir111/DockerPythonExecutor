@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Импортируем CORS
 import sys
 import io
 
 app = Flask(__name__)
+CORS(app)  # Разрешаем все домены (по умолчанию)
 
 @app.route('/execute', methods=['POST'])
 def execute_code():
